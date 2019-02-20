@@ -1,0 +1,8 @@
+// Q: How to work with std streams?
+
+// nothing here; check 19
+
+// stdin
+// stdout vs stderr
+
+
