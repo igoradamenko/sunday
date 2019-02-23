@@ -53,12 +53,8 @@ function sendFileSafe(filepath, res) {
   });
 }
 
-function sendFile(filePath, res) {
-  fs.readFile(filePath, function(err, content) {
-    if (err) throw err;
-
-    const mime = require('mime').lookup(filePath);
-    res.setHeader('Content-Type', `${mime}; charset=utf-8`);
-    res.end(content);
-  });
+function sendFile(filepath, res) {
+  res.end(fs.readFileSync(filepath, 'utf-8'));
 }
+
+// ls -la
