@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Уютный чатик</title>
+</head>
+<body>
+  <p>Добро пожаловать!</p>
+
+  <form id="publish">
+    <input type="text" name="message">
+    <input type="submit" value="Отправить">
+  </form>
+
+  <ul id="messages"></ul>
+
+  <script>
+    publish.onsubmit = function() {
+      const xhr = new XMLHttpRequest();
+
+      xhr.open('POST', '/publish', true);
+
+      xhr.send(JSON.stringify({ message: this.elements.message.value }));
+
+      this.elements.message.value = '';
+
+      return false;
+    };
+
+    function subscribe() {
+      const xhr = new XMLHttpRequest();
+
+      xhr.open('GET', '/subscribe', true);
+
+      xhr.onreadystatechange = function() {
+        if (this.readyState !== 4) return;
+
+        if (this.status !== 200) {
+          setTimeout(subscribe, 500);
+          return;
+        }
+
+        const li = document.createElement('li');
+        li.append(document.createTextNode(this.responseText));
+        messages.append(li);
+
+        subscribe();
+      };
+
+      xhr.send(null);
+    }
+
+    subscribe();
+  </script>
+</body>
+</html>
