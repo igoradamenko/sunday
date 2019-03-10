@@ -1,5 +1,7 @@
-// слишком простой чат, в коде есть минимум 7 серьёзных ошибок.
+// в коде есть минимум 7 серьёзных ошибок.
 // что это за ошибки?
+
+// открывать в разных браузерах!
 
 const http = require('http');
 const fs = require('fs');
@@ -38,7 +40,7 @@ http.createServer((req, res) => {
         });
 
       break;
-  
+
     default:
       res.statusCode = 404;
       res.end('Not found');

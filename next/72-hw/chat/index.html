@@ -2,26 +2,24 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container">
 <p class="lead">Добро пожаловать в чат!</p>
 
-<form id="publish" class="form-inline">
+<form id="publish">
   <input type="text" name="message"/>
-  <input type="submit" class="btn btn-primary" value="Отправить"/>
+  <input type="submit" value="Отправить"/>
 </form>
 
 <ul id="messages"></ul>
 
 <script>
-
   publish.onsubmit = function() {
     const xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "/publish", true);
+    xhr.open('POST', '/publish', true);
 
-    xhr.send(JSON.stringify({message: this.elements.message.value}));
+    xhr.send(JSON.stringify({ message: this.elements.message.value }));
 
     this.elements.message.value = '';
 
@@ -33,7 +31,7 @@
   function subscribe() {
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "/subscribe", true);
+    xhr.open('GET', '/subscribe', true);
 
     xhr.onload = function() {
       const li = document.createElement('li');
