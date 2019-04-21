@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button class="button">Joined</button>
+
+  <style>
+    .button {
+      display: inline-block;
+      position: relative;
+      height: 34px;
+      padding: 0 14px 0 37px;
+      font-size: 12px;
+      line-height: 32px;
+      border: 1px solid #e6ecf0;
+      border-radius: 17px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    .button:hover {
+      border-color: #dfe4e8;
+    }
+  </style>
+</body>
+</html>
