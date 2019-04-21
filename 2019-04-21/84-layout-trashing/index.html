@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>Block 1</div>
+  <div>Block 2</div>
+  <div>Block 3</div>
+
+  <button onclick="run()">Run</button>
+  <button onclick="runFixed()">Run Fixed</button>
+  <button onclick="runRAF()">Run RAF</button>
+
+  <script>
+    var divs = document.getElementsByTagName('div');
+    var element1 = divs[0];
+    var element2 = divs[1];
+    var element3 = divs[2];
+
+    function run() {
+      var h1 = element1.clientHeight;
+      element1.style.height = (h1 * 2) + 'px';
+
+      var h2 = element2.clientHeight;
+      element2.style.height = (h2 * 2) + 'px';
+
+      var h3 = element3.clientHeight;
+      element3.style.height = (h3 * 2) + 'px';
+    }
+
+    function runFixed() {
+      var h1 = element1.clientHeight;
+      var h2 = element2.clientHeight;
+      var h3 = element3.clientHeight;
+
+      element1.style.height = (h1 * 2) + 'px';
+      element2.style.height = (h2 * 2) + 'px';
+      element3.style.height = (h3 * 2) + 'px';
+    }
+
+    function runRAF() {
+      var h1 = element1.clientHeight;
+
+      requestAnimationFrame(function() {
+        element1.style.height = (h1 * 2) + 'px';
+      });
+
+      var h2 = element2.clientHeight;
+
+      requestAnimationFrame(function() {
+        element2.style.height = (h2 * 2) + 'px';
+      });
+
+      var h3 = element3.clientHeight;
+
+      requestAnimationFrame(function() {
+        element3.style.height = (h3 * 2) + 'px';
+      });
+    }
+  </script>
+</body>
+</html>
