@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 10.92l2.49 2.68 5.51-6"/>
+  </svg>
+
+  <!--
+    source:
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 10.92l2.49 2.68 5.51-6"/></svg>
+  -->
+
+  <br><hr><br>
+
+  <details>
+    <summary>plain</summary>
+
+    <pre><code>
+    &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">&lt;path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 10.92l2.49 2.68 5.51-6"/>&lt;/svg>
+  </code></pre>
+  </details>
+
+  <br><hr><br>
+
+  <!--
+    echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 10.92l2.49 2.68 5.51-6"/></svg>' | base64
+  -->
+
+  <details>
+    <summary>base64</summary>
+
+    <pre><code>
+    data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTYuMyAxMC45MmwyLjQ5IDIuNjggNS41MS02Ii8+PC9zdmc+Cg==
+  </code></pre>
+  </details>
+
+
+  <br><hr><br>
+
+  <!--
+    encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 10.92l2.49 2.68 5.51-6"/></svg>')
+  -->
+
+  <details>
+    <summary>encodeURIComponent</summary>
+
+    <pre><code>
+    data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20d%3D%22M6.3%2010.92l2.49%202.68%205.51-6%22%2F%3E%3C%2Fsvg%3E
+  </code></pre>
+  </details>
+
+
+  <br><hr><br>
+
+  <!--
+    postcss-url
+
+    encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 10.92l2.49 2.68 5.51-6"/></svg>')
+        .replace(/%3D/g, '=')
+        .replace(/%3A/g, ':')
+        .replace(/%2F/g, '/')
+        .replace(/%22/g, "'")
+        .replace(/%2C/g, ',')
+        .replace(/%3B/g, ';')
+        .replace(/%20/g, ' ')
+        .replace(/#/g, '%23')
+  -->
+
+  <details>
+    <summary>encodeURIComponent + safe replacements</summary>
+
+    <pre><code>
+    data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6.3 10.92l2.49 2.68 5.51-6'/%3E%3C/svg%3E
+  </code></pre>
+  </details>
+
+  <br><hr><br>
+
+  <!--
+    postcss-svgo
+
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.3 10.92l2.49 2.68 5.51-6"/></svg>'
+      .replace(/"/g, '\'')
+      .replace(/%/g, '%25')
+      .replace(/</g, '%3C')
+      .replace(/>/g, '%3E')
+      .replace(/&/g, '%26')
+      .replace(/#/g, '%23')
+      .replace(/\s+/g, ' ')
+  -->
+
+  <details>
+    <summary>just replacements</summary>
+
+    <pre><code>
+    data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6.3 10.92l2.49 2.68 5.51-6'/%3E%3C/svg%3E
+  </code></pre>
+  </details>
+
+
+  <br><hr><br>
+
+
+  <label class="button">
+    <input type="checkbox" class="button__controller">
+    <span class="button__checkbox"></span>
+    <span class="button__text">Joined</span>
+  </label>
+
+  <style>
+    .button {
+      display: inline-block;
+      position: relative;
+      height: 32px;
+      padding: 0 14px 0 37px;
+      font-size: 12px;
+      line-height: 32px;
+      border: 1px solid #e6ecf0;
+      border-radius: 17px;
+      background: #fff;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:hover {
+      border-color: #dfe4e8;
+    }
+
+    .button__controller {
+      display: none;
+    }
+
+    .button__checkbox {
+      position: absolute;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      left: 8px;
+      top: 6px;
+      border-radius: 50%;
+      background-color: #3DC23F;
+    }
+
+    .button__checkbox::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      transform: scale(1);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform .25s;
+    }
+
+    .button__checkbox::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(0);
+      width: 20px;
+      height: 20px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E %3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6.3 10.92l2.49 2.68 5.51-6'/%3E %3C/svg%3E") no-repeat center;
+      transition: transform .25s;
+    }
+
+    .button__controller:checked + .button__checkbox::after {
+      transform: scale(1);
+    }
+
+    .button__controller:checked + .button__checkbox::before {
+      transform: scale(0);
+    }
+  </style>
+</body>
+</html>
