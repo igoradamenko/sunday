@@ -1,0 +1,16 @@
+{
+  "name": "83-swc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "size-limit": "^1.0.1",
+    "uglify-js": "^3.5.5"
+  }
+}
