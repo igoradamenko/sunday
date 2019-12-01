@@ -1,0 +1,29 @@
+{
+  "name": "111-hw-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon --exec 'mocha'"
+  },
+  "author": "",
+  "dependencies": {
+    "@noname-land/mongoose-beautiful-unique-validation": "^1.0.1",
+    "clarify": "^2.1.0",
+    "config": "^3.1.0",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.7.3",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "trace": "^3.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "should": "^13.2.3"
+  }
+}
