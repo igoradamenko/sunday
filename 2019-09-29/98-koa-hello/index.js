@@ -17,6 +17,10 @@ app.use(async (ctx, next) => {
 
   // ctx.response.body = 'hello';
   ctx.body = 'hello';
+
+  console.log('Said hello');
 });
+
+console.log('Listen on 3000 port');
 
 app.listen(3000);
